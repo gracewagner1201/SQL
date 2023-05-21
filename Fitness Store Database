@@ -1,0 +1,34 @@
+Create a Fitness Store Database based off of the information listed below
+
+/** Fitness Store:
+Gummy Bear Pre-workout Flavor (5), $7, aisle 2, 4-star review
+Cinnamon Roll Protein Powder (7), $15, aisle 3, 4-star review
+2 Blenders Shaker Bottle (13), $8, aisle 1, 2-star review
+Peanut Butter Protein Bars (9), $2, aisle 1, 4-star review
+"GAINZZ" t-shirt (8), $10, aisle 4, 5-star review
+Watermelon BCAA Flavor, (6), $7, aisle 2, 1-star review
+Chocolate Protein Powder (8), $17, aisle 3, 5-star review
+Starbursts Pre-Workout Flavor (9), $9, aisle 2, 5-star review
+Tropical Punch Energy Drink (10), $3, aisle 1, 4-star review
+1 Blender Shaker Bottle (10), $5, aisle 1, 5-star view
+**/
+
+CREATE TABLE FitnessStore (id INTEGER PRIMARY KEY, item TEXT, instock INTEGER, priceUSD INTEGER, aisle INTEGER, rating INTEGER);
+
+INSERT INTO FitnessStore VALUES (1, "Gummy Bear Pre-Workout Flavor", 5, 7, 2, 4); 
+INSERT INTO FitnessStore VALUES (2, "Cinnamon Roll Protein Powder", 7, 15, 3, 4);
+INSERT INTO FitnessStore VALUES (3, "2 Blender Shakers Bottle", 13, 8, 1, 2);
+INSERT INTO FitnessStore VALUES (4, "Peanut Butter Protein Bars", 9, 2, 1, 4);
+INSERT INTO FitnessStore VALUES (5, "GAINZZ t-shirt", 8, 10, 4, 5);
+INSERT INTO FitnessStore VALUES (6, "Watermelon BCAA FLavor", 6, 7, 2, 1); 
+INSERT INTO FitnessStore VALUES (7, "Chocholate Protein Powder", 8, 17, 3, 5);
+INSERT INTO FitnessStore VALUES (8, "Starbursts Pre-Workout Flavor", 9, 9, 2, 5);
+INSERT INTO FitnessStore VALUES (9, "Tropical Punch Energy Drink", 10, 3, 1, 4);
+INSERT INTO FitnessStore VALUES (10, "1 Blender Shaker Bottle", 10, 5, 1, 5); 
+
+--display the database ordered by price
+SELECT id, item, aisle, priceUSD, rating FROM FitnessStore 
+ORDER BY priceUSD;
+
+--How many items total should be recorded on the inventory?
+SELECT SUM(instock) FROM FitnessStore 
